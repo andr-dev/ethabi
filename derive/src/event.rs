@@ -141,7 +141,7 @@ impl Event {
 		let log_fields = &self.log_fields;
 
 		quote! {
-			#[derive(Debug, Clone, PartialEq, Eq)]
+			#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 			pub struct #name {
 				#(#log_fields),*
 			}
